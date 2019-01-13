@@ -16,14 +16,40 @@ To run this notebook you will need:
 * scikit-learn 0.20.2
 * geopandas 0.4.0
 
+## Motivation
+A current topic of public discussion is ecological attitudes and policies, including conscious consumerism. I would like to back this with data and specifically, determine if current human economic development is the main reason behind our footprint.
+
 ## Content
-The notebook tries to answer 3 questions:
+* **ecological_footprint.ipynb**: Notebook containing the analysis
+* **CSV files with data**: NFA 2018.csv, HDI.csv, Final_hli.csv, country_data_fixed.csv, countries of the worlds.csv
+* **Pictures** used in blog post, result of the analysis.
+* **help_function.py**: Help plotting functions used in the notebook.
 
-1. How much of our worlds biocapacity are we consuming
+## Notebook Content
+1. **Business understanding: Ecological Footprint**
+2. **Data understanding:**
+    * 2.1 Ecological footprint
+    * 2.2 Human development Index
+    * 2.3 Human Life Index
+    * 2.4 Country area data
 
-2. A common preconception is that it is human development leads to a larger ecological footprint, is that true? how much of the ecological footprint from consumption can be explain from HDI, GDP, HLI etc.
+3. **Data preparation:**
+    * 3.1 Ecological footprint
+    * 3.2 Human development Index
+    * 3.3 Human Life Index
+    * 3.4 Country area data
 
-3. Is there any way of clustering this countries that will tell us common strategies in the ecological policies. Do they seem to correlate with economic indicators.
+4. **Questions to our data:**
+    * 4.1 Year in the world: a glipse of how the world looks like:
+        * 4.1.1. Evaluation
+        * 4.1.2
+    * 4.2 HDI and GDP: are they behind ecological footprint?
+        * 4.2.1. Modelling
+        * 4.2.2. Evaluation
+    * 4.3. Can we classify the countries based on their ecological footprint?
+        * 4.3.1 Modelling
+        * 4.3.2 Evaluation
+
 
 ## Conclusions
 
