@@ -14,6 +14,14 @@ mpl.rcParams['axes.titlesize'] =  fs
 
 
 def top_k_pie(df, col, k, ax=None):
+    """
+    Plots the top k values of a column of a dataframe in a pie plot on a certain axes.
+    :param df: DataFrame containing the data
+    :param col: Name of the column to plot from the data frame
+    :param k: Number of top values to plot
+    :param ax: optional, axes object to plot on. By default it will create a new plot
+    :return: return the axis
+    """
     if not ax:
         fig, ax = plt.subplots()
     topk = df.set_index('code')[col].sort_values(ascending=False)[:k]
@@ -25,6 +33,13 @@ def top_k_pie(df, col, k, ax=None):
 
 
 def plot_eco_balance(data, feature, subfeature):
+    """
+    Function that will plot  biocapacity and ecological footprint for a certain subfeature (crop_land, carbon, ...)
+    :param data: DataFrame containing the data
+    :param feature: main feature to plot with biocapacity (EFConsTotGHA for example)
+    :param subfeature: subfeature to plot (total, crop_land, carbon, ...)
+    :return: figure and axes object with the plot.
+    """
     bio = 'BiocapTotGHA_' + subfeature
     ef = feature + '_' + subfeature
     wd = data[data.country == 'World'].set_index('year')[[bio, ef]]
@@ -62,6 +77,13 @@ def plot_eco_balance(data, feature, subfeature):
 
 
 def ef_linear_regression(df, year=2014, feat=['GDP', 'HDI', 'HLI', 'PD']):
+    """
+    Calculates a linear regresson for the 'EFConsTotGHA_percap'
+    :param df: DataFrame containing the data
+    :param year: year from the DataFrame to plot
+    :param feat: list of features to use for the regression
+    :return: regression model, r2 score, and scaler used for the regression
+    """
     data_year = df[df.year == year].copy(deep=True)
     data_year.loc[:, 'PD'] = data_year.population / data_year.area
     data_year.drop(['area', 'population'], axis=1, inplace=True)
